@@ -22,9 +22,9 @@ for Type in "hooks" "operators" "executors" "macros" "migrations" "models" "sens
 		if [[ "$NecessaryLinks" == *"$Type"* ]]
 		then
 			echo -e "Creating link for \e[92m$Type\033[0m"
-			ln -s "$PluginFolder/$PluginName/$Type"  "$AIRFLOW_HOME/$Type/$PluginName"
+			ln -snf "$PluginFolder/$PluginName/$Type"  "$AIRFLOW_HOME/$Type/$PluginName"
 		fi
 	done
 
-ln -s "$PluginFolder/$PluginName" "$PythonHome/$PluginName" 
+ln -snf "$PluginFolder/$PluginName" "$PythonHome/$PluginName" 
 echo -e "\e[92mSuccessfully\033[0m finished creating links..."
